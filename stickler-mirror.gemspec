@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["rubygems.org@bascht.com"]
   spec.description   = "Mirror a bunch of gems via stickler"
   spec.summary       = "Reads your current Gemfile and pushes all gems to stickler"
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/bascht/"
   spec.license       = "Apache v2 License"
 
   spec.files         = `git ls-files`.split($/)
