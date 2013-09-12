@@ -17,7 +17,7 @@ module Stickler
 
         # Don't drink the kool aid
         result = Bundler.with_clean_env do
-          system("fstickler mirror #{name} --gem-version #{version}")
+          system("stickler mirror #{name} --gem-version #{version}")
         end
 
         if result.nil?
