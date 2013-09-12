@@ -2,7 +2,7 @@
 
 require 'trollop'
 require 'bundler/setup'
-require 'stickler/mirror'
+require_relative '../lib/stickler/mirror'
 
 opts = Trollop::options do
   version "Stickler Mirror #{Stickler::Mirror::VERSION}"

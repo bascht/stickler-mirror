@@ -1,4 +1,4 @@
-require "stickler/mirror/version"
+require_relative "mirror/version"
 
 module Stickler
   module Mirror
@@ -14,7 +14,11 @@ module Stickler
         name, version = gem.name, gem.version
 
         puts "\nMirroring #{name}-#{version}..."
-        result = system("stickler mirror #{name} --gem-version #{version}")
+
+        # Don't drink the kool aid
+        result = Bundler.with_clean_env do
+          system("fstickler mirror #{name} --gem-version #{version}")
+        end
 
         if result.nil?
           puts "I am sorry. Something went wrong mirroring #{name}."
