@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+require 'trollop'
+require 'bundler/setup'
+require 'stickler/mirror'
+
+opts = Trollop::options do
+  version "Stickler Mirror #{Stickler::Mirror::VERSION}"
+  banner <<-EOL
+
+  stickler-mirror
+
+Firing up stickler-mirror will get a list of required gems from your 
+current Gemfile.lock and try to ask stickler to mirror all of them.
+
+Please make sure to set up stickler before trying stickler-mirror!
+
+  Usage: stickler-mirror
+EOL
+
+end
+
+Stickler::Mirror.run
